@@ -1,12 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
 
 body{
-    background-color: #070749;
+    /* background-color: #070749; */
+    background-color: #0a1f44;
+    /* background-image: url(contents/photos/mountain.jpg) ;
+
+    background-size: cover;
+    background-repeat: no-repeat; */
+  
 }
+
 
 .text-header{
     color: white;
     font-size: 64px;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
+}
+
+.cardTitle{
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.badgeText{
+    font-size: 14px;
+    font-weight: 500;
+    top: -8px;
+}
+
+.numberText{
+    font-size: 104px;
+    font-weight: 700;
+}
+
+sup{
+    font-size: 48px;
+    top: -40px;
+    font-weight: 500;
+}
+
+.weatherImg{
+    width: 150px;
+}
+
+.img-thumbnail{
+    border: none;
+}
+
+.bottomText{
+    font-weight: 500;
+}
+
+.card{
+    border-radius: 20px;
 }

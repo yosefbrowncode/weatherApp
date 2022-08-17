@@ -11,14 +11,33 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Yosi's Weather App</title>
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="container"">
       <div class="row">
         <div class="col-12 text-center mt-5">
-          <h1 class="text-header">Weather App</h1>
+          <h1 class="text-header mt-5">Weather App</h1>
         </div>
+        <div class="col-4 mx-auto mt-5">
+          <input
+          id="valueInput"
+            class="form-control form-control-lg valueInput"
+            type="text"
+            placeholder="Enter City"
+            aria-label=".form-control-lg example"
+          />
+        </div>
+        <div class="row">
+          <div class="col-4 text-end mx-auto mt-4 pe-0">
+            <button type="button" onclick="getValue()" class="btn btn-primary btn-lg">SEARCH</button>
+          </div>
+        </div>
+        <ul id="addCard" class="row card-row mt-5 pt-5 searchResults mb-5 addCard">
+      
+          <!-- Card End -->
+        </ul>
       </div>
     </div>
     <script src="script.js"></script>
@@ -27,5 +46,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+   
   </body>
 </html>
