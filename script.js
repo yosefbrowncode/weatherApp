@@ -1,5 +1,14 @@
 const API_KEY = "c3e169d224a28c41ec41bd02424a2ccf";
 
+var input = document.getElementById("valueInput");
+
+input.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("btnSearch").click();
+  }
+});
+
 function getValue() {
   let cityName = document.getElementById("valueInput").value;
   let resetVal = document.getElementById("valueInput");
