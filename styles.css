@@ -58,7 +58,16 @@ sup{
 .card{
     border-radius: 20px;
 }
+.fixed-bottom{
+    background-color: #0e202e !important;
+   
+}
 
+.footerText{
+    color: white !important; 
+    overflow-wrap: break-word;
+    font-weight: 350;
+    font-size: 18px;
 
 @media only screen and (max-width: 572px) {
     .cardStyle{

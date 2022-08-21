@@ -39,7 +39,7 @@ function getValue() {
       const li = document.createElement("li");
       li.classList.add("col-lg-3", "col-md-4", "col-sm-6");
       const weatherCard = ` 
-   <div class="">
+   <div class="mb-5">
     <div class="card cardStyle" >
       <div class="card-body">
         <h6 class="card-title  cardss ms-2 mt-3 text-center">
