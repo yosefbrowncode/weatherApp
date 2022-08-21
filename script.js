@@ -1,4 +1,6 @@
 const API_KEY = "c3e169d224a28c41ec41bd02424a2ccf";
+let clearValue = document.getElementById("valueInput");
+var errorMessage = document.getElementById("errorMessage");
 
 // Use enter to run function
 
@@ -8,6 +10,7 @@ input.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
     document.getElementById("btnSearch").click();
+    input.blur();
   }
 });
 
@@ -17,25 +20,25 @@ function getValue() {
   let cityName = document.getElementById("valueInput").value;
   let resetVal = document.getElementById("valueInput");
   let API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=imperial`;
-  let arrayList = document.querySelectorAll("li");
 
-  axios.get(API_URL).then((response) => {
-    console.log(response.data);
-    // let tempUpdate = document.getElementById("numberText1");
-    // let badgeText = document.getElementById("badgeText2");
+  axios
+    .get(API_URL)
+    .then((response) => {
+      // let tempUpdate = document.getElementById("numberText1");
+      // let badgeText = document.getElementById("badgeText2");
 
-    let addCard = document.getElementById("addCard");
-    let nameCity = response.data.name;
-    let temp = response.data.main.temp;
-    let country = response.data.sys.country;
-    let tempNumber = Number(Math.ceil(temp));
-    let icon = response.data.weather[0].icon;
-    let description = response.data.weather[0].description;
-    let iconImage = `contents/weather/${icon}.png`;
+      let addCard = document.getElementById("addCard");
+      let nameCity = response.data.name;
+      let temp = response.data.main.temp;
+      let country = response.data.sys.country;
+      let tempNumber = Number(Math.ceil(temp));
+      let icon = response.data.weather[0].icon;
+      let description = response.data.weather[0].description;
+      let iconImage = `contents/weather/${icon}.png`;
 
-    const li = document.createElement("li");
-    li.classList.add("col-lg-3", "col-md-4", "col-sm-6");
-    const weatherCard = ` 
+      const li = document.createElement("li");
+      li.classList.add("col-lg-3", "col-md-4", "col-sm-6");
+      const weatherCard = ` 
    <div class="">
     <div class="card cardStyle" >
       <div class="card-body">
@@ -61,13 +64,16 @@ function getValue() {
       </div>
     </div>
    `;
-    li.innerHTML = weatherCard;
-    addCard.appendChild(li);
-  });
+      li.innerHTML = weatherCard;
+      addCard.prepend(li);
+    })
+    .catch(function (error) {
+      errorMessage.innerText = "Error Please Check Your Spelling";
+    });
 
   resetVal.value = "";
-
-  for (let i = arrayList; i < 4; i++) {
-    alert("got em");
-  }
 }
+
+clearValue.addEventListener("focus", function () {
+  errorMessage.innerText = "";
+});
