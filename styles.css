@@ -2,11 +2,14 @@
 
 body{
     /* background-color: #070749; */
-    background-color: #0a1f44;
-    /* background-image: url(contents/photos/mountain.jpg) ;
+    /* background-color: #0a1f44;
+background-image: url(contents/photos/bg.svg) ;  */
 
-    background-size: cover;
-    background-repeat: no-repeat; */
+background: url(contents/photos/nice.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   
 }
 
@@ -26,7 +29,7 @@ body{
 .badgeText{
     font-size: 14px;
     font-weight: 500;
-    top: -8px;
+    top: 3px;
 }
 
 .numberText{
@@ -55,3 +58,26 @@ sup{
 .card{
     border-radius: 20px;
 }
+
+
+@media only screen and (max-width: 572px) {
+    .cardStyle{
+        width: 18rem;
+        margin: auto;
+    }
+  }
+  @media only screen and (max-width: 375px) {
+    .text-header{
+       font-size: 56px;
+    }
+  }
+
+  @media only screen and (max-width: 330px) {
+    li{
+       display: flex;
+       justify-content: center;
+    }
+  }
+   .cardStyle{
+       margin-bottom: 18px;
+   }

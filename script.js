@@ -1,5 +1,7 @@
 const API_KEY = "c3e169d224a28c41ec41bd02424a2ccf";
 
+// Use enter to run function
+
 var input = document.getElementById("valueInput");
 
 input.addEventListener("keypress", function (event) {
@@ -9,15 +11,19 @@ input.addEventListener("keypress", function (event) {
   }
 });
 
+// Function to search and make API Call
+
 function getValue() {
   let cityName = document.getElementById("valueInput").value;
   let resetVal = document.getElementById("valueInput");
   let API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=imperial`;
+  let arrayList = document.querySelectorAll("li");
 
   axios.get(API_URL).then((response) => {
     console.log(response.data);
     // let tempUpdate = document.getElementById("numberText1");
     // let badgeText = document.getElementById("badgeText2");
+
     let addCard = document.getElementById("addCard");
     let nameCity = response.data.name;
     let temp = response.data.main.temp;
@@ -28,13 +34,14 @@ function getValue() {
     let iconImage = `contents/weather/${icon}.png`;
 
     const li = document.createElement("li");
-    li.classList.add("col-3");
+    li.classList.add("col-lg-3", "col-md-4", "col-sm-6");
     const weatherCard = ` 
    <div class="">
-    <div class="card" style="width: 16rem">
+    <div class="card cardStyle" >
       <div class="card-body">
         <h6 class="card-title  cardss ms-2 mt-3 text-center">
-          <Span class="cardTitle">${nameCity}</Span><sup
+          <Span class="cardTitle">${nameCity}</Span>
+          <br><sup
           id="badgeText2"
             class="badge rounded-pill bg-primary badgeText ms-2"
             >${country}</sup
@@ -59,4 +66,8 @@ function getValue() {
   });
 
   resetVal.value = "";
+
+  for (let i = arrayList; i < 4; i++) {
+    alert("got em");
+  }
 }
